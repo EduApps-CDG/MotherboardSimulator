@@ -23,7 +23,7 @@ var EBoard = {
 		
 		this.download = function() {
 			document.open();
-			document.write(xmlDoc);
+			document.write(xmlDoc.innerHTML);
 			document.close();
 		}
 		
