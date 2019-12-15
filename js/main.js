@@ -45,6 +45,7 @@ var EBoard = {
 				document.open();
 				document.write("" + text);
 				document.close();
+				console.log(text);
 			} else {
 				console.error("Document is not OK");
 			}
