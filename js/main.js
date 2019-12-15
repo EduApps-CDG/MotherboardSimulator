@@ -59,8 +59,8 @@ var EBoard = {
 			}
 		}
 		
-		this.upload = function(e) {
-			e.preventDefault();
+		this.upload = function() {
+		//	e.preventDefault();
 			$("#upload:hidden").trigger('click');
 		}
 		
