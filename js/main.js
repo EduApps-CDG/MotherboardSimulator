@@ -44,7 +44,7 @@ var EBoard = {
 			if(OK) {
 				var save = new Blob([text], {type:"application/xml"});
 				var a = document.createElement("a");
-				var url = URL.createObjectURL("#download=true");
+				var url = URL.createObjectURL(save);
 				a.href = url;
 				a.download = "Your Project";
 				document.body.appendChild(a);
