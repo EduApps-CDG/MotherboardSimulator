@@ -59,6 +59,11 @@ var EBoard = {
 			}
 		}
 		
+		this.upload = function(e) {
+			e.preventDefault();
+			$("#upload:hidden").trigger('click');
+		}
+		
 		 this.xml = x[0];
 	},
 }
