@@ -61,16 +61,16 @@ var EBoard = {
 		}
 		
 		this.upload = function() {
-		//	e.preventDefault();
 			$("#upload:hidden").trigger('click');
 		}
 		
 		 this.xml = x[0];
 	},
 }
-
+var __test = null;
 __uploadButton.onchange = function(e) {
 	var file = __uploadButton.files[0];
+	__test = file;
 	console.log(file);
 }
 
