@@ -1,6 +1,5 @@
 var __canvas = document.getElementById("sim");
 var __ctx = __canvas.getContext("2d");
-var __uploadButton = document.getElementById("upload");
 var __project = null;
 
 var EBoard = {
@@ -69,7 +68,9 @@ var EBoard = {
 	},
 }
 
-__uploadButton.onchange = function() {
+
+var __uploadButton = document.getElementById("upload");
+__uploadButton.onchange = function(e) {
 	var file = _uploadButton.files[0];
 	console.log(file);
 }
