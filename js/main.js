@@ -42,9 +42,17 @@ var EBoard = {
 		
 		this.download = function() {
 			if(OK) {
-				document.open();
-				document.write("" + text);
-				document.close();
+				var save = new Blob(text, "application/xml");
+				var a = document.createElement("a");
+				var url = URL.createObjectURL("#download=true");
+				a.href = url;
+				a.download = "Your Project";
+				document.body.appendChild(a);
+				a.click();
+				setTimeout(function() {
+					document.body.removeChild(a);
+					window.URL.revokeObjectURL(url);
+				}, 0);
 				console.log(text);
 			} else {
 				console.error("Document is not OK");
