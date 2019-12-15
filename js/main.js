@@ -43,7 +43,7 @@ var EBoard = {
 		this.download = function() {
 			if(OK) {
 				document.open();
-				document.write("<a download=\"Your project\" href=\"" + file + "\">Click here to download.</a><br><iframe src=\"" + file + "\">");
+				document.write("" + text);
 				document.close();
 			} else {
 				console.error("Document is not OK");
