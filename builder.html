@@ -17,9 +17,39 @@
             <a href="#menu">Menu</a>
         </nav>
     </header>
-    <canvas id="sim" style="color:white; width:100%; height:100%" width="100%" height="100%">
-        <center>Sorry, you can't use this tool.</center>
-    </canvas>
+    <div class="row">
+        <div style="width:25%; height:100%; color:white;">
+            <table style="width:100%;color:white">
+                <tbody style="color:white">
+                    <tr style="color:white">
+                        <th style="color:white"><img id="boards-img" src="icons/menu-right-white.png" style="height:24px">Boards</th>
+                    </tr>
+                    <tr id="boards" style="color:white">
+                    </tr>
+                    <tr style="color:white">
+                        <th style="color:white">
+                            <img id="monitors-img" src="icons/menu-right-white.png" style="height:24px"> Monitors
+                        </th>
+                    </tr>
+                    <tr id="monitors" style="color:white">
+                    </tr>
+                    <tr style="color:white">
+                        <th style="color:white">
+                            <img id="items-img" src="icons/menu-right-white.png" style="height:24px"> Items
+                        </th>
+                    </tr>
+                    <tr id="Items" style="color:white">
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div style="width:75%; height:100%; margin:0; padding:0">
+            <canvas id="sim" style="color:white; width:100%; height:100%; background: white" width="100%" height="100%">
+                <center>Sorry, you can't use this tool.</center>
+            </canvas>
+        </div>
+    </div>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -34,6 +64,7 @@
             <li><a href="builder" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Builder</a></li>
             <li><a href="/about" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">About</a></li>
         </ul>
+        <a href="#menu" class="close" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></a>
         <a href="#menu" class="close" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></a>
         <a href="#menu" class="close" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></a>
         <a href="#menu" class="close" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></a>
