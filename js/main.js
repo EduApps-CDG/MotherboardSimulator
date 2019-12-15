@@ -1,7 +1,8 @@
+var __canvas = document.getElementById("sim");
+var __ctx = __canvas.getContext("2d");
+var __project = null;
+
 var EBoard = {
-	canvas: document.getElementById("sim"),
-	ctx: Eboard.canvas.getContext("2d"),
-	
 	Project: function(file) {
 		var xmlhttp;
 		
@@ -30,7 +31,6 @@ var EBoard = {
 	},
 }
 
-var __project = null;
 window.onload = function() {
 	__project = new EBoard.Project("samples/empty.xml");
 }
