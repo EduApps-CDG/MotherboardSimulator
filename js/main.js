@@ -29,3 +29,8 @@ var EBoard = {
 		return x[0];
 	},
 }
+
+var __project = null;
+window.onload = function() {
+	__project = new EBoard.Project("samples/empty.xml");
+}
