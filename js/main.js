@@ -13,6 +13,14 @@ var EBoard = {
 		}
 		
 		xmlhttp.open("GET",file,false);
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState === 4) {
+				if (xmlhttp.status == 200) {
+					var xml = xmlhttp.responseText;
+					console.log(xml);
+				}
+			}
+		}
 		xmlhttp.send();
 		var xmlDoc = xmlhttp.responseXML;
 		var x = xmlDoc.getElementsByTagName("project");
@@ -23,7 +31,7 @@ var EBoard = {
 		
 		this.download = function() {
 			document.open();
-			document.write(xmlDoc.innerHTML);
+			document.write();
 			document.close();
 		}
 		
