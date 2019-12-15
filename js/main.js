@@ -27,7 +27,7 @@ var EBoard = {
 			document.close();
 		}
 		
-		return x[0];
+		 this.xml = x[0];
 	},
 }
 
