@@ -20,7 +20,7 @@ var EBoard = {
 				if (xmlhttp.status == 200) {
 					OK = true;
 					text = xmlhttp.responseText;
-					console.info("File \"" + file "\" is OK");
+					console.info("File \"" + file + "\" is OK");
 				}
 			}
 		}
