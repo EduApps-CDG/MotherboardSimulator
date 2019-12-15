@@ -42,7 +42,7 @@ var EBoard = {
 		
 		this.download = function() {
 			if(OK) {
-				var save = new Blob(text, "application/xml");
+				var save = new Blob([text], {type:"application/xml"});
 				var a = document.createElement("a");
 				var url = URL.createObjectURL("#download=true");
 				a.href = url;
