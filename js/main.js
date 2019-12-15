@@ -5,6 +5,8 @@ var __project = null;
 var EBoard = {
 	Project: function(file) {
 		var xmlhttp;
+		var OK = false;
+		var text;
 		
 		if (window.XMLHttpRequest) {
 			xmlhttp = new XMLHttpRequest();
@@ -16,8 +18,9 @@ var EBoard = {
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState === 4) {
 				if (xmlhttp.status == 200) {
-					var xml = xmlhttp.responseText;
-					console.log(xml);
+					OK = true;
+					text = xmlhttp.responseText;
+					console.info("File \"" + file "\" is OK");
 				}
 			}
 		}
@@ -25,14 +28,26 @@ var EBoard = {
 		var xmlDoc = xmlhttp.responseXML;
 		var x = xmlDoc.getElementsByTagName("project");
 		
+		this.help = function() {
+			console.log("EBoard.Project help\n\n commands:\n    help     - show this help message []\n    insert   - insert a tag in the project [root, element]\n    download - download the project []\n    xml      - the xml document resource []");
+		}
+		
 		this.insert = function(root, element) {
-			root.appendChild(element);
+			if (OK) {
+				root.appendChild(element);
+			} else {
+				console.error("Document is not OK");
+			}
 		}
 		
 		this.download = function() {
-			document.open();
-			document.write();
-			document.close();
+			if(OK) {
+				document.open();
+				document.write(text);
+				document.close();
+			} else {
+				console.error("Document is not OK");
+			}
 		}
 		
 		 this.xml = x[0];
