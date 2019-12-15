@@ -73,7 +73,7 @@ window.onload = function() {
 	__project = new EBoard.Project("samples/empty.xml");
 }
 
-__uploadButton.onchange = function(e) {
+__uploadButton.onchange = function() {
 	var file = _uploadButton.files[0];
 	console.log(file);
 }
