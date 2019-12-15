@@ -1,6 +1,6 @@
 var EBoard = {
 	canvas: document.getElementById("sim"),
-	ctx: canvas.getContext("2d"),
+	ctx: Eboard.canvas.getContext("2d"),
 	
 	Project: function(file) {
 		var xmlhttp;
