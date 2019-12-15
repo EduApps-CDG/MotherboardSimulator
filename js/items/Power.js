@@ -1,0 +1,3 @@
+EBoard.items.Power = {
+  
+}
