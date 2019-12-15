@@ -2,12 +2,15 @@ var __canvas = document.getElementById("sim");
 var __ctx = __canvas.getContext("2d");
 var __uploadButton = document.getElementById("upload");
 var __project = null;
+var __test = null;
 
 var EBoard = {
-	Project: function(file) {
+	Project: function(mode, file) {
+		if (mode === "url") {
 		var xmlhttp;
 		var OK = false;
 		var text;
+		var xmlDoc;
 		
 		if (window.XMLHttpRequest) {
 			xmlhttp = new XMLHttpRequest();
@@ -26,7 +29,11 @@ var EBoard = {
 			}
 		}
 		xmlhttp.send();
-		var xmlDoc = xmlhttp.responseXML;
+		xmlDoc = xmlhttp.responseXML;
+		} else if (mode === "upload") {
+			xmlDoc = (new window.DOMParser()).parseFromString(file, "text/xml");
+			__test = xmlDoc;
+		}
 		var x = xmlDoc.getElementsByTagName("project");
 		
 		this.help = function() {
@@ -67,13 +74,15 @@ var EBoard = {
 		 this.xml = x[0];
 	},
 }
-var __test = null;
+
 __uploadButton.onchange = function(e) {
 	var file = __uploadButton.files[0];
-	__test = file;
-	console.log(file);
+	file.text().then(function(text) {
+		__project = new EBoard.Project("upload",text);
+		console.log(text);
+	});	
 }
 
 window.onload = function() {
-	__project = new EBoard.Project("samples/empty.xml");
+	__project = new EBoard.Project("url","samples/empty.xml");
 }
