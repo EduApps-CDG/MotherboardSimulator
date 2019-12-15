@@ -76,16 +76,6 @@ var EBoard = {
     },
 }
 
-function __ObjectLength( object ) {
-    var length = 0;
-    for( var key in object ) {
-        if( object.hasOwnProperty(key) ) {
-            ++length;
-        }
-    }
-    return length;
-}
-
 __uploadButton.onchange = function(e) {
     var file = __uploadButton.files[0];
     file.text().then(function(text) {
